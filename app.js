@@ -10,10 +10,12 @@ app.use(logger)
 const connection = require('./middleware/db_connect');
 
 // Dashboard
+app.disable("x-powered-by");
+
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/app1', (req, res) => {
-  res.send('Hello this Apps 1!')
+  res.send('Hello this App 1!')
 });
 
 app.get('/app2', (req, res) => {
