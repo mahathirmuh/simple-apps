@@ -6,6 +6,6 @@ services:
     restart: always
     env_file: ./apps/.env
     volumes:
-      - myapp:./apps
+      - myapp:/apps
 volumes:
   myapp:
