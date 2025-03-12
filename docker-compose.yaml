@@ -1,15 +1,11 @@
-version: "3.9"
-
 services:
   apps:
-    build: ./apps           # Sesuaikan dengan lokasi Dockerfile Anda
+    build: ./apps
     ports:
       - "10000:3000"
     restart: always
-    env_file:
-      - ./apps/.env         # Pastikan file .env ada di ./apps/.env
+    env_file: ./apps/.env
     volumes:
-      - myapp:/usr/src/app  # Memetakan named volume "myapp" ke /usr/src/app di container
-
+      - myapp:./apps
 volumes:
   myapp:
